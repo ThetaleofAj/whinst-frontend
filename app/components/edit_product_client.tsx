@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation'
 import dynamic from "next/dynamic";
 import ReactPlayer from 'react-player'
 const VideoPlayer = dynamic(() => import("react-player/lazy"), {ssr: false});
-import { VideoToFrames, VideoToFramesMethod } from '../VideoToFrame';
 import Link from 'next/link';
 import Image from 'next/image'
 
@@ -63,11 +62,6 @@ export default function EditProductClient(props:any){
     
         const [file] = event.target.files;
         const fileUrl = URL.createObjectURL(file);
-        const frames = await VideoToFrames.getFrames(
-          fileUrl,
-          30,
-          VideoToFramesMethod.totalFrames
-        );
     
         setStatus("IDLE");
         setImages(frames);

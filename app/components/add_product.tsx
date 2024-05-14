@@ -4,7 +4,6 @@ import * as Yup from 'yup';
 import { useRouter,useParams } from 'next/navigation'
 import { useState,MouseEvent, useRef } from 'react';
 import dynamic from "next/dynamic";
-import { VideoToFrames, VideoToFramesMethod } from '../VideoToFrame';
 import Link from 'next/link';
 import Image from 'next/image'
 import {XMarkIcon} from '@heroicons/react/24/outline'
@@ -61,11 +60,6 @@ export default function AddProductComponent(){
     
         const [file] = event.target.files;
         const fileUrl = URL.createObjectURL(file);
-        const frames = await VideoToFrames.getFrames(
-          fileUrl,
-          30,
-          VideoToFramesMethod.totalFrames
-        );
     
         setStatus("IDLE");
         setImages(frames);
@@ -140,11 +134,6 @@ const clearFile =()=>{
             setStatus("LOADING");
             const [file] = e.target.files;
             const fileUrl = URL.createObjectURL(file);
-            const frames = await VideoToFrames.getFrames(
-                fileUrl,
-                6,
-                VideoToFramesMethod.totalFrames
-              );
 
               setStatus("IDLE");
               setImages(frames);
