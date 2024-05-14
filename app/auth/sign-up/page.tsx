@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { UserCircleIcon,UsersIcon,XMarkIcon} from '@heroicons/react/24/outline'
 import {signIn} from "next-auth/react"
+import Image from 'next/image'
 
 interface MySignUpFormValues{
     firstName: string,

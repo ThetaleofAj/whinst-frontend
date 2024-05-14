@@ -101,7 +101,7 @@ export default function Dashboard(){
           </div> */}
             <div className="container flex flex-col lg:flex-row items-center md:gap-12 gap:1 md:mt-18 mt-5 lg:mt-16">
                 <div className="md:w-2/4 flex-1 flex flex-col items-center lg:items-start">
-                    <p className='md:text-7xl text-7xl text-[#686868]'><span className='text-black'>Wh</span>at's <span className='text-black'>in</span> <span className='text-black'>st</span>ock?</p>
+                    <p className='md:text-7xl text-7xl text-[#686868]'><span className='text-black'>Wh</span>at&apos;s <span className='text-black'>in</span> <span className='text-black'>st</span>ock?</p>
                     <p className='text-xl p-2 font-medium'>Create and share digital catalogs of your products and services with your customers</p>
                     <div className='flex flex-col lg:flex-row items-center p-2 gap-3'>
 
@@ -113,7 +113,7 @@ export default function Dashboard(){
                 <div className="md:w-2/4 w-full h-96 relative shadow-2xl border">
                 <Image 
           fill
-         style={{objectFit:'cover'}}
+         style={{objectFit:'cover'}}                                                                                                                 
          alt=''
          src='/slideShow24.gif' 
          priority
@@ -163,7 +163,7 @@ export default function Dashboard(){
         <div className="flex flex-col items-center">
             <CgAddR size={25}/>
             <p className="font-bold text-center text-lg">Create a digital catalog</p>
-            <p className="text-center text-black">Easily create a digital catalog, add your store name and logo and you're good to go. </p>
+            <p className="text-center text-black">Easily create a digital catalog, add your store name and logo and you&apos;re good to go. </p>
         </div>
 
         <div className="flex flex-col items-center" >

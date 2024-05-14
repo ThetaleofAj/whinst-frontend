@@ -2,7 +2,7 @@
 import { useParams } from "next/navigation"
 import { useRouter } from 'next/navigation'
 
-export default function userVerification(){
+export default function UserVerification(){
     const router = useRouter()
     const params = useParams()
     const code = params.id

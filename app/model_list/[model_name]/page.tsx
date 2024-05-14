@@ -29,7 +29,7 @@ export default async function ModelList({ params }: { params: { model_name: stri
     if(session.user.role != 'admin'){
         return(
             <div className="h-screen flex flex-col justify-center items-center">
-            <p>You're not an admin</p>
+            <p>You&apos;re not an admin</p>
             </div>
         )
     }
@@ -72,12 +72,12 @@ const info = [
 <p>Active users: {activeCount}</p>
 </div>
            {
-        data.map(model=>(
+        data.map((model,index)=>(
             
-            <div  className='flex flex-row space-between border-b space-x-4 w-max p-2'>
+            <div  className='flex flex-row space-between border-b space-x-4 w-max p-2' key={index}>
             {
                     Object.entries(model).map(([key,val])=>(
-                        <div className='flex flex-row'>
+                        <div className='flex flex-row' key={val}>
                              <p className='font-bold'>{key}:</p> <p>{val}</p>
                         </div>
                     

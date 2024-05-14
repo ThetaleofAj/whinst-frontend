@@ -2,7 +2,7 @@
 import { useParams } from "next/navigation"
 import { useRouter } from 'next/navigation'
 
-export default function newEmailVerification(){
+export default function NewEmailVerification(){
     const router = useRouter()
     const params = useParams()
     const code = params.id

@@ -26,7 +26,7 @@ export default async function MyAccount({ params }: { params: { user_id: number 
       if(session.user.role != 'admin'){
         return(
             <div className="h-screen flex flex-col justify-center items-center">
-            <p>You're not an admin</p>
+            <p>You&apos;re not an admin</p>
             </div>
         )
     }

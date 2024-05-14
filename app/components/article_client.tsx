@@ -6,6 +6,7 @@ import { IoMenuSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
 import moment from 'moment'
 import Markdown from 'react-markdown'
+import Image from 'next/image'
 
 export default function ArticleClient(){
 const params = useParams()
@@ -127,7 +128,7 @@ useEffect(()=>{
               </div>
           </>):(<>
             <div className="container flex flex-col items-center gap-12 mt-5 mb-5" key={blog.id}>
-      <img className='h-full w-full object-cover' src={blog.image} alt=""/>
+      <Image className='h-full w-full object-cover' src={blog.image} alt=""/>
       <div className='flex flex-col items-center'>
       <h1 className='font-bold text-4xl my-1 pt-5'>{blog.title}</h1>
       <p className="text-gray-400 dark:text-gray-400">{moment(blog.datePosted).format('LL')}</p>

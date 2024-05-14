@@ -28,7 +28,7 @@ export default async function AdminHome(){
     if(session.user.role != 'admin'){
         return(
             <div className="h-screen flex flex-col justify-center items-center">
-            <p>You're not an admin</p>
+            <p>You are not an admin</p>
             </div>
         )
     }
