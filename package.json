@@ -1,0 +1,58 @@
+{
+  "name": "whinst-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@heroicons/react": "^2.0.18",
+    "@paddle/paddle-js": "^1.0.3",
+    "@types/bcrypt": "^5.0.0",
+    "@types/node": "20.4.6",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.14",
+    "bcrypt": "^5.1.1",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.12",
+    "formik": "^2.4.3",
+    "moment": "^2.30.1",
+    "next": "13.4.12",
+    "next-auth": "^4.23.1",
+    "nodemailer": "^6.9.5",
+    "postcss": "8.4.27",
+    "qrcode": "^1.5.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.12.0",
+    "react-markdown": "^9.0.1",
+    "react-player": "^2.13.0",
+    "react-share": "^5.0.3",
+    "react-slugify": "^3.0.3",
+    "setimmediate": "^1.0.5",
+    "tailwindcss": "3.3.3",
+    "typescript": "5.1.6",
+    "yup": "^1.2.0"
+  },
+  "browser": {
+    "fs": false,
+    "net": false,
+    "dns": false,
+    "child_process": false,
+    "tls": false
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "@types/bcryptjs": "^2.4.4",
+    "@types/estree": "^1.0.5",
+    "@types/setimmediate": "^1.0.2"
+  }
+}
