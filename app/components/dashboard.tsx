@@ -10,6 +10,7 @@ import { IoClose } from "react-icons/io5";
 
 export default function Dashboard(){
     const [isOpen,setIsOpen] = useState(false)
+    const [index,setIndex] = useState(0)
     const dropDown =()=>{
         if(isOpen){
             setIsOpen(false)
@@ -17,6 +18,14 @@ export default function Dashboard(){
             setIsOpen(true)
         }
     }
+
+    const images = ['/slide1.png','/slide2.png','/slide3.png','/slide4.png']
+
+    useEffect(()=>{
+      setTimeout(()=>setIndex((prevIndex)=>prevIndex === images.length - 1 ? 0 : prevIndex + 1),2500)
+      return ()=>{}
+
+    },[index])
 
 
     return(
@@ -110,15 +119,51 @@ export default function Dashboard(){
 
                     </div>
                 </div>
-                <div className="md:w-2/4 w-full h-96 relative shadow-2xl border">
-                <Image 
-          fill
-         style={{objectFit:'cover'}}                                                                                                                 
-         alt=''
-         src='/slideShow24.gif' 
-         priority
-          />
-                </div>
+                
+{/*                
+<div className="md:w-2/4 w-full h-96 relative shadow-2xl border">
+  <div>
+
+  {
+                  images.map((image)=>(
+
+                    <div>
+                    <Image 
+              fill
+             style={{objectFit:'cover'}}                                                                                                                 
+             alt=''
+             src={images[index]}
+             priority
+              />
+                    </div>
+                    
+                  ))
+  }
+ 
+  </div>
+</div>
+                */}
+
+
+                               
+
+                    <div className="md:w-2/4 w-full h-96 relative shadow-2xl border">
+                    <Image 
+              fill
+             style={{objectFit:'cover'}}                                                                                                                 
+             alt=''
+             src={images[index]}
+             priority
+              />
+                    </div>
+                    
+                  
+ 
+  
+               
+
+
+
             </div>
             {/* SECTION 2 */}
             <div className="container flex flex-col-reverse lg:flex-row items-center md:gap-12 gap-1  mt-14 lg:mt-28">
