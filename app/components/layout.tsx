@@ -186,7 +186,7 @@ const CancelSubBox=()=>{
 
 
          useEffect(() => {
-          initializePaddle({ environment:'sandbox', token: AUTH_TOKEN,eventCallback(event) {
+          initializePaddle({ environment:'sandbox', token: AUTH_TOKEN,eventCallback(event) { //production
             if(event.name == "checkout.completed")  {
               router.refresh()
             }
@@ -205,7 +205,7 @@ const CancelSubBox=()=>{
 
         const openCheckout = () => {
           paddle?.Checkout.open({
-            items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k'}],
+            items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k'}], //pro_01hxxj4jkygx03g74e0sccgm7d
             customer:{
               email:email
              

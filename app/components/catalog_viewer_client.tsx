@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Modal from './modal';
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import type { Metadata } from 'next'
 
 
 interface productProps {
@@ -95,6 +96,10 @@ export default function CatalogViewerClient(props:any){
      
       )
       }
+
+
+      
+
 
   
     return(

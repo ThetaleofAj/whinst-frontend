@@ -7,7 +7,7 @@ const manrope = Manrope({subsets:['latin']})
 
 export const metadata: Metadata = {
   title: 'Whinst',
-  description: 'What is in stock',
+  description: 'Create and share digital catalogs of your products and services with your customers!',
 }
 
 export default function RootLayout({
