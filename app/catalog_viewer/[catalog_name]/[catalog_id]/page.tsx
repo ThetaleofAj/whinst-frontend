@@ -15,7 +15,9 @@ export const generateMetadata = async ({params}:Props):Promise<Metadata> =>{
   return{
     title: `${data.catalog.catalog_name} • Whinst digital catalog`,
     description: 'View my product catalog!',
-    icons: data.catalog_logo
+    openGraph:{
+      images: data.catalog_logo
+    }
   }
 }
 
