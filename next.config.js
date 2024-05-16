@@ -12,7 +12,7 @@ const nextConfig = {
       //       return config;
       // },
       ///delete these when making changes
-    
+   
 }
 
 module.exports = nextConfig

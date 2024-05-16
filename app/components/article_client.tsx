@@ -128,7 +128,7 @@ useEffect(()=>{
               </div>
           </>):(<>
             <div className="container flex flex-col items-center gap-12 mt-5 mb-5" key={blog.id}>
-      <Image className='h-full w-full object-cover' src={blog.image} alt=""/>
+      <img className='object-cover' src={blog.image} alt=""/>
       <div className='flex flex-col items-center'>
       <h1 className='font-bold text-4xl my-1 pt-5'>{blog.title}</h1>
       <p className="text-gray-400 dark:text-gray-400">{moment(blog.datePosted).format('LL')}</p>
