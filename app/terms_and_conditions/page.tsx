@@ -4,7 +4,7 @@ export default function TermsAndConditions(){
     return(
      <div className='flex flex-col space-y-2 p-2'>
 <p><strong>Terms and Conditions</strong></p>
-<p><strong>ADD DATE HERE</strong></p>
+<p><strong>15/05/2024</strong></p>
 <p><strong>1. Introduction</strong></p>
 <p>Welcome to Whinst! These terms and conditions govern your use of our SaaS platform and any related services provided by us. By accessing or using Whinst, you agree to be bound by these terms and conditions. If you disagree with any part of these terms and conditions, you may not access or use Whinst.</p>
 <p><strong>2. License to Use Whinst</strong></p>

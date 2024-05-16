@@ -344,6 +344,7 @@ export default function Dashboard(){
             <p className="font-bold text-center text-courseassist-orange text-lg">Legal</p>
             <Link href="/privacy_policy"><p className="text-center text-black">Privacy Policy</p></Link>
             <Link href="/terms_and_conditions"><p className="text-center text-black">Terms of Service</p></Link>
+            <Link href="/refund_policy"><p className="text-center text-black">Refund Policy</p></Link>
         </div>
     </div>
   </section>
