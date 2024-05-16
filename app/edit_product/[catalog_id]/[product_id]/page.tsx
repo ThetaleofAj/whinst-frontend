@@ -28,7 +28,7 @@ async function getPaidData(props:any){
 
 async function getData(product_id:number){
   await new Promise(resolve=>setTimeout(resolve,2000))
-  const res = await fetch(`https://whinst-backend.cyou/${product_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/product/${product_id}`,{
     next: {
       revalidate: 0
     }
