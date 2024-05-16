@@ -86,7 +86,7 @@ const catalog_logo = props.props1.catalog_logo
 // }
 
 //setIsLoading(props.props2)
-const catalog_id: any = `https://whinst/catalog_viewer/${data.catalog_name}/${params.catalog_id}`
+const catalog_id: any = `https://www.whinst.com/catalog_viewer/${data.catalog_name}/${params.catalog_id}`
 
 // const generateQRCODE =()=>{
 //      QRCode.toDataURL(
