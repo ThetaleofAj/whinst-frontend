@@ -26,7 +26,7 @@ unique_id: string
 
 async function getData(props:any){
   await new Promise(resolve=>setTimeout(resolve,3000))
-  const res = await fetch(`http://165.227.114.6/catalogs/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalogs/${props}/`,{
     next: {
       revalidate: 0
     }

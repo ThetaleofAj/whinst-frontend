@@ -60,7 +60,7 @@ export default function SignUp(){
     const signUp = async(props:any)=>{
         setIsLoading(true)
         const uid = crypto.randomUUID()
-        await fetch('http://165.227.114.6/create-user/',{
+        await fetch('https://whinst-backend.cyou/create-user/',{
             method:'POST',
             body:JSON.stringify({
                 "first_name":props.firstName,

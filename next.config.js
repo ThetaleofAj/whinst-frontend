@@ -11,6 +11,8 @@ const nextConfig = {
       //       config.externals = [...config.externals, 'bcrypt'];
       //       return config;
       // },
+      ///delete these when making changes
+    
 }
 
 module.exports = nextConfig

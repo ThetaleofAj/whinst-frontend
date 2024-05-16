@@ -6,7 +6,7 @@ import LayoutServer from '@/app/layout_server/page';
 import EditProductClient from '@/app/components/edit_product_client';
 
 async function getCatalogData(props:any){
-  const res = await fetch(`http://165.227.114.6/catalogs/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalogs/${props}/`,{
     next: {
       revalidate: 0
     }
@@ -16,7 +16,7 @@ async function getCatalogData(props:any){
 
 
 async function getPaidData(props:any){
-  const res = await fetch(`http://165.227.114.6/user/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/user/${props}/`,{
     next: {
       revalidate: 0
     }
@@ -28,7 +28,7 @@ async function getPaidData(props:any){
 
 async function getData(product_id:number){
   await new Promise(resolve=>setTimeout(resolve,2000))
-  const res = await fetch(`http://165.227.114.6/product/${product_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/${product_id}`,{
     next: {
       revalidate: 0
     }
@@ -39,7 +39,7 @@ async function getData(product_id:number){
 
 async function getCatalog(catalog_id:any){
   //setIsLoading(true)
-  const res = await fetch(`http://165.227.114.6/catalog/${catalog_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalog/${catalog_id}`,{
     next: {
       revalidate: 0
     }

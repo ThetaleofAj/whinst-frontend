@@ -8,7 +8,7 @@ export default function NewEmailVerification(){
     const code = params.id
     const new_email = params.new_email
     const verifyEmail = async()=>{
-        await fetch(`http://165.227.114.6/update-email/${code}/${new_email}`,{
+        await fetch(`https://whinst-backend.cyou/update-email/${code}/${new_email}`,{
             method:'PUT',
             headers:{
                 'Content-Type': 'application/json',

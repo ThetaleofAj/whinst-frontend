@@ -105,7 +105,7 @@ const catalog_id: any = `https://whinst/catalog_viewer/${data.catalog_name}/${pa
 
     const deleteProduct=async(e: MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault
-        await fetch(`http://localhost:5000/delete-catalog/${params.catalog_id}/`,{
+        await fetch(`https://whinst-backend.cyou/delete-catalog/${params.catalog_id}/`,{
             method:'DELETE',
         }).then((data=>data.json()))
         .then((res:any)=>{
@@ -120,7 +120,7 @@ const catalog_id: any = `https://whinst/catalog_viewer/${data.catalog_name}/${pa
           //Loading indicator set to true here
          setIsLoading(true)
         e.preventDefault
-        fetch(`http://localhost:5000/delete-store-logo/${params.catalog_id}/${data.store_logo}`,{
+        fetch(`https://whinst-backend.cyou/delete-store-logo/${params.catalog_id}/${data.store_logo}`,{
             method:'PUT',
             headers:{
                 'Content-Type': 'application/json'
@@ -141,7 +141,7 @@ const catalog_id: any = `https://whinst/catalog_viewer/${data.catalog_name}/${pa
         e.preventDefault
         const formData = new FormData()
         formData.append('store_logo',file)
-        await fetch(`http://165.227.114.6/change-store-logo/${params.catalog_id}`,{
+        await fetch(`https://whinst-backend.cyou/change-store-logo/${params.catalog_id}`,{
             method:'PUT',
             body:formData,
         }).then((data=>data.json()))
@@ -161,7 +161,7 @@ const catalog_id: any = `https://whinst/catalog_viewer/${data.catalog_name}/${pa
       const editCatalogName=async(props:any)=>{
               //Loading indicator set to true here
             setIsLoadingName(true)
-            await fetch(`http://165.227.114.6/edit-catalog-details/${params.catalog_id}/`,{
+            await fetch(`https://whinst-backend.cyou/edit-catalog-details/${params.catalog_id}/`,{
                 method:'PUT',
                 body:JSON.stringify({
                     catalog_name:props.catalog_name,
@@ -248,7 +248,7 @@ const handleFile=async(e:any)=>{
     if(currency != data.currency){
         //Loading indicator set to true here
         setIsLoadingCurrency(true)
-  await fetch(`http://165.227.114.6/edit-catalog-currency/${params.catalog_id}/`,{
+  await fetch(`https://whinst-backend.cyou/edit-catalog-currency/${params.catalog_id}/`,{
       method:'PUT',
       body:JSON.stringify({
           currency:currency,

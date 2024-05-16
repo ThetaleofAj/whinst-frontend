@@ -9,7 +9,7 @@ type Props = {
   const text = 'hello'
 
   async function getData(props:any){
-    const res = await fetch(`http://165.227.114.6/user/${props}/`,{
+    const res = await fetch(`https://whinst-backend.cyou/user/${props}/`,{
       next: {
         revalidate: 0
       }

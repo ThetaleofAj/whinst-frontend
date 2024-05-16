@@ -10,7 +10,7 @@ import LayoutServer from '../layout_server/page';
 
 async function getUser(props:any){
     await new Promise(resolve=>setTimeout(resolve,2000))
-    const res = await fetch(`http://165.227.114.6/user/${props}`,{
+    const res = await fetch(`https://whinst-backend.cyou/user/${props}`,{
       next: {
         revalidate: 0
       }

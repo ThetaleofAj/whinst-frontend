@@ -35,7 +35,7 @@ export default function MyAccountClient(props:any){
 
 
     const onSubmit=async(properties:any)=>{
-        await fetch(`http://165.227.114.6/edit-user/${props.id}/`,{
+        await fetch(`https://whinst-backend.cyou/edit-user/${props.id}/`,{
             method:'PUT',
             body:JSON.stringify({
                 first_name:properties.first_name,
@@ -57,7 +57,7 @@ export default function MyAccountClient(props:any){
 
      const onSubmitEmail=async(properties:any)=>{
         const uid = crypto.randomUUID()
-        await fetch('http://165.227.114.6/change-email/',{
+        await fetch('https://whinst-backend.cyou/change-email/',{
             method:'PUT',
             body:JSON.stringify({
                 new_email:properties,
@@ -78,7 +78,7 @@ export default function MyAccountClient(props:any){
      }
 
      const onSubmitPassword=async(properties:any)=>{
-        await fetch('http://165.227.114.6/change-password/',{
+        await fetch('https://whinst-backend.cyou/change-password/',{
             method:'PUT',
             body:JSON.stringify({
                 old_password:properties.current_password,
@@ -101,7 +101,7 @@ export default function MyAccountClient(props:any){
 
      const deleteUser=async(e: MouseEvent<HTMLButtonElement>)=>{
         e.preventDefault
-        await fetch(`http://165.227.114.6/delete-user/${props.id}/`,{
+        await fetch(`https://whinst-backend.cyou/delete-user/${props.id}/`,{
             method:'DELETE',
         }).then((data=>data.json()))
         .then((res:any)=>{

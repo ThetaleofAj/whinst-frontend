@@ -7,7 +7,7 @@ export default function UserVerification(){
     const params = useParams()
     const code = params.id
     const verifyUser = async()=>{
-        await fetch(`http://165.227.114.6/verify-user/${code}`,{
+        await fetch(`https://whinst-backend.cyou/verify-user/${code}`,{
             method:'PUT',
             headers:{
                 'Content-Type': 'application/json',

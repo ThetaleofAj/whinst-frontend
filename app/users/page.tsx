@@ -12,7 +12,7 @@ interface UserProps{
 
 async function getUsers(){
     await new Promise(resolve=>setTimeout(resolve,3000))
-    const res = await fetch(`http://165.227.114.6/users/`,{
+    const res = await fetch(`https://whinst-backend.cyou/users/`,{
       next: {
         revalidate: 0
       }

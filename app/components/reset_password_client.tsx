@@ -20,7 +20,7 @@ export default function ResetPasswordClient(){
     const onSubmit=async(properties:any)=>{
         setIsLoading(true)
         const uid = crypto.randomUUID()
-        await fetch('http://165.227.114.6/reset-password/',{
+        await fetch('https://whinst-backend.cyou/reset-password/',{
             method:'PUT',
             body:JSON.stringify({
                 email:properties.email,

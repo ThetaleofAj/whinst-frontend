@@ -103,7 +103,7 @@ const clearFile =()=>{
             formData.append('product_qty',props.product_qty)
             formData.append('thumbnail_name',thumnailName)
             formData.append('thumbnail',thumbnail)
-            await fetch('http://165.227.114.6/create_product/',{
+            await fetch('https://whinst-backend.cyou/create_product/',{
                 method:'POST',
                 body:formData,
                 // headers:{

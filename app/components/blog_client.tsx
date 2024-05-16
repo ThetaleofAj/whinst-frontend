@@ -174,14 +174,14 @@ export default function BlogClient(){
             <BsFacebook/>
             <p class="text-center text-black pl-1"> CourseAssist</p>
             </div> */}
-            <div className='flex flex-row items-center '>
+            {/* <div className='flex flex-row items-center '>
          
            <a href='https://www.instagram.com/_courseassist/?igshid=ZDdkNTZiNTM%3D' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">_courseassist</p></a>
             </div>
             <div className='flex flex-row items-center '>
        
            <a href='https://www.facebook.com/profile.php?id=100094626365981&mibextid=ZbWKwL' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">Course Assist</p></a>
-            </div>
+            </div> */}
         </div>
 
         <div className="flex flex-col items-center">

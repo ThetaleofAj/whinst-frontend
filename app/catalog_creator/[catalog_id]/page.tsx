@@ -47,7 +47,7 @@ interface Data {
 
 async function getData(catalog_id:any){
   //setIsLoading(true)
-  const res = await fetch(`http://165.227.114.6/catalog/${catalog_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalog/${catalog_id}`,{
     next: {
       revalidate: 0
     }
@@ -57,13 +57,13 @@ async function getData(catalog_id:any){
 
 
 async function getUser(user_id:any){
-  const res = await fetch(`http://165.227.114.6/user/${user_id}/`)
+  const res = await fetch(`https://whinst-backend.cyou/user/${user_id}/`)
   return res.json()
 }
 
 async function getProducts(catalog_id:any){
   //setIsLoading(true)
-  const res = await fetch(`http://165.227.114.6/products/${catalog_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/products/${catalog_id}`,{
     next: {
       revalidate: 0
     }

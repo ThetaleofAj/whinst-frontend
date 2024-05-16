@@ -13,7 +13,7 @@ interface CatalogProps{
 }
 
 async function getCatalogData(props:any){
-  const res = await fetch(`http://165.227.114.6/catalogs/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalogs/${props}/`,{
     next: {
       revalidate: 0
     }
@@ -23,7 +23,7 @@ async function getCatalogData(props:any){
 
 
 async function getPaidData(props:any){
-  const res = await fetch(`http://165.227.114.6/user/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/user/${props}/`,{
     next: {
       revalidate: 0
     }
@@ -35,7 +35,7 @@ async function getPaidData(props:any){
 
 async function getCatalog(catalog_id:any){
   //setIsLoading(true)
-  const res = await fetch(`http://165.227.114.6/catalog/${catalog_id}`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalog/${catalog_id}`,{
     next: {
       revalidate: 0
     }

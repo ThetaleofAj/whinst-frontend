@@ -10,7 +10,7 @@ interface ModelProps{
 
 async function getData(){
     await new Promise(resolve=>setTimeout(resolve,3000))
-    const res = await fetch(`http://165.227.114.6/models/`,{
+    const res = await fetch(`https://whinst-backend.cyou/models/`,{
       next: {
         revalidate: 0
       }

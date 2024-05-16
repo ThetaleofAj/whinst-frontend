@@ -23,7 +23,7 @@ interface CatalogProps{
 
 async function getData(props:ComponentProps){
   await new Promise(resolve=>setTimeout(resolve,3000))
-  const res = await fetch(`http://165.227.114.6/catalogs/${props.id}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalogs/${props.id}/`,{
     next: {
       revalidate: 0
     }
@@ -34,7 +34,7 @@ async function getData(props:ComponentProps){
 
 async function getDataAdmin(){
   await new Promise(resolve=>setTimeout(resolve,3000))
-  const res = await fetch(`http://165.227.114.6/catalogs/`,{
+  const res = await fetch(`https://whinst-backend.cyou/catalogs/`,{
     next: {
       revalidate: 0
     }
@@ -44,7 +44,7 @@ async function getDataAdmin(){
 }
 
 async function getPaidData(props:any){
-  const res = await fetch(`http://165.227.114.6/user/${props}/`,{
+  const res = await fetch(`https://whinst-backend.cyou/user/${props}/`,{
     next: {
       revalidate: 0
     }

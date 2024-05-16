@@ -20,7 +20,7 @@ const initialValues: MyResetFormValues = {password:'',confirmPassword:''};
 const onSubmit=async(properties:any)=>{
     setIsLoading(true)
     
-    await fetch('http://192.168.1.135:5000/resetpassword/',{
+    await fetch('https://whinst-backend.cyou/resetpassword/',{
         method:'PUT',
         body:JSON.stringify({
             unique_code:props.props,

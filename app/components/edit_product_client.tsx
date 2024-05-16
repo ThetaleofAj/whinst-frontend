@@ -75,7 +75,7 @@ export default function EditProductClient(props:any){
 
      const onSubmit=async(props:ProductForm)=>{
         setIsLoadingEdit(true)
-        await fetch(`http://165.227.114.6/edit-product/${params.product_id}/`,{
+        await fetch(`https://whinst-backend.cyou/edit-product/${params.product_id}/`,{
             method:'PUT',
             body:JSON.stringify({
                 product_name:props.product_name,
@@ -100,7 +100,7 @@ export default function EditProductClient(props:any){
      const deleteProduct=async(e: MouseEvent<HTMLButtonElement>)=>{
 
         e.preventDefault
-        await fetch(`http://165.227.114.6/delete-product/${params.product_id}/`,{
+        await fetch(`https://whinst-backend.cyou/delete-product/${params.product_id}/`,{
             method:'DELETE',
             body:JSON.stringify({
               filename:data.product_image
@@ -123,7 +123,7 @@ export default function EditProductClient(props:any){
     setIsLoading(true)
       //Loading indicator set to true here
     e.preventDefault
-    fetch(`http://165.227.114.6/delete-product-media/${params.product_id}/${data.product_image}`,{
+    fetch(`https://whinst-backend.cyou/delete-product-media/${params.product_id}/${data.product_image}`,{
         method:'PUT',
         headers:{
             'Content-Type': 'application/json'
@@ -146,7 +146,7 @@ if(file != ''){
 e.preventDefault
 const formData = new FormData()
 formData.append('product_image',file)
-await fetch(`http://165.227.114.6/change-product-media/${params.product_id}`,{
+await fetch(`https://whinst-backend.cyou/change-product-media/${params.product_id}`,{
     method:'PUT',
     body:formData,
 }).then((data=>data.json()))

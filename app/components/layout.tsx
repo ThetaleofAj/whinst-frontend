@@ -63,7 +63,7 @@ const Layout =({children,email,id,paid}:any)=>{
     }
 
     const CancelSubscription=()=>{
-      fetch(`http://165.227.114.6/cancel-sub/${id}/`,{
+      fetch(`https://whinst-backend.cyou/cancel-sub/${id}/`,{
         method: 'GET',
         headers: {
            'content-type': 'application/json'

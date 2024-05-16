@@ -58,12 +58,12 @@ export default function Create_Catalog(props:ComponentProps){
     }
 
     async function getUser(){
-      const res = await fetch(`http://165.227.114.6/user/${props.id}/`)
+      const res = await fetch(`https://whinst-backend.cyou/user/${props.id}/`)
       return res.json()
     }
 
     async function getUserCatalogs(){
-      const res = await fetch(`http://165.227.114.6/catalogs/${props.id}/`)
+      const res = await fetch(`https://whinst-backend.cyou/catalogs/${props.id}/`)
       return res.json()
     }    
 
@@ -89,7 +89,7 @@ export default function Create_Catalog(props:ComponentProps){
         formData.append('currency',currency)
         formData.append('phone_number',propsTwo.number)
         formData.append('email',propsTwo.email)
-        await fetch('http://165.227.114.6/create_catalog/',{
+        await fetch('https://whinst-backend.cyou/create_catalog/',{
             method:'POST',
             body:formData,
         }).then((data=>data.json()))
@@ -115,7 +115,7 @@ export default function Create_Catalog(props:ComponentProps){
         formData.append('currency',currency)
         formData.append('phone_number',propsTwo.number)
         formData.append('email',propsTwo.email)
-        await fetch('http://165.227.114.6/create_catalog/',{
+        await fetch('https://whinst-backend.cyou/create_catalog/',{
             method:'POST',
             body:formData,
         }).then((data=>data.json()))

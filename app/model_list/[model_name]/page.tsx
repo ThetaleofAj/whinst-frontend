@@ -12,7 +12,7 @@ interface UserProps{
 async function getData(model_name:any){
     //setIsLoading(true)
     await new Promise(resolve=>setTimeout(resolve,1000))
-    const res = await fetch(`http://165.227.114.6/model_list/${model_name}`,{
+    const res = await fetch(`https://whinst-backend.cyou/model_list/${model_name}`,{
       next: {
         revalidate: 0
       }

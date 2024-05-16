@@ -30,7 +30,7 @@ export const authOptions: NextAuthOptions = {
                     password: string;
                 };
                
-                    const response = await fetch(`http://165.227.114.6/sign-in/`,{
+                    const response = await fetch(`https://whinst-backend.cyou/sign-in/`,{
                         method:'POST',
                         body:JSON.stringify({
                             "email":email,
@@ -68,7 +68,7 @@ export const authOptions: NextAuthOptions = {
                 const first_name = profile?.name?.split(" ")[0]
                 const last_name = profile?.name?.split(" ")[1]
             try{
-                const response = await fetch('http://165.227.114.6/google-sign-in/',{
+                const response = await fetch('https://whinst-backend.cyou/google-sign-in/',{
                     method:'POST',
                     body:JSON.stringify({
                         "first_name":first_name,
@@ -96,7 +96,7 @@ export const authOptions: NextAuthOptions = {
         
         async jwt({ token, user, session,profile}) {
             if(user){ 
-                const response = await fetch(`http://165.227.114.6/get-user/${user.email}`)
+                const response = await fetch(`https://whinst-backend.cyou/get-user/${user.email}`)
                 const result = await response.json();
                 return {
                     ...token,
