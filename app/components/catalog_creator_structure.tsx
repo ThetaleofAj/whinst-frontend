@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import ShareModal from './share_modal';
 import { Currencies } from './currencies';
 import  QRCode from "qrcode";
+import slugify from "react-slugify"
 
 
 
@@ -85,8 +86,10 @@ const catalog_logo = props.props1.catalog_logo
 //     doThat()
 // }
 
+const catalog_name:any = slugify(data.catalog_name)
+
 //setIsLoading(props.props2)
-const catalog_id: any = `https://www.whinst.com/catalog_viewer/${data.catalog_name}/${params.catalog_id}`
+const catalog_id: any = `https://www.whinst.com/catalog_viewer/${catalog_name}/${params.catalog_id}`
 
 // const generateQRCODE =()=>{
 //      QRCode.toDataURL(
@@ -535,7 +538,7 @@ enableReinitialize ={true}
         {/* FOR LARGE SCREENS */}
         <div className="flex flex-row justify-evenly items-center space-x-2  hidden md:block">
                {/* bg-black text-white hover:bg-[#686868] focus:ring-4 focus:outline-none */}
-<Link href={`/catalog_viewer/${data.catalog_name}/${params.catalog_id}/`} className="px-3 py-2 font-bold text-center inline-flex items-center text-white bg-black rounded-lg hover:bg-[#686868] focus:ring-4 ">
+<Link href={`/catalog_viewer/${catalog_name}/${params.catalog_id}/`} className="px-3 py-2 font-bold text-center inline-flex items-center text-white bg-black rounded-lg hover:bg-[#686868] focus:ring-4 ">
 <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
 <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
 <EyeIcon className='h-5 w-5 mr-1'/>
@@ -584,7 +587,7 @@ View
             {/* FOR SMALL SCREENS */}
 
 <div className="flex flex-row justify-evenly items-center space-x-2  block md:hidden">
-<Link href={`/catalog_viewer/${data.catalog_name}/${params.catalog_id}/`} className="px-3 py-2 font-bold text-center inline-flex items-center text-white bg-black rounded-lg hover:bg-[#686868] focus:ring-4">
+<Link href={`/catalog_viewer/${catalog_name}/${params.catalog_id}/`} className="px-3 py-2 font-bold text-center inline-flex items-center text-white bg-black rounded-lg hover:bg-[#686868] focus:ring-4">
 <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z"/>
 <path d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z"/>
 <EyeIcon className='h-5 w-5'/>

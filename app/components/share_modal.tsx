@@ -3,6 +3,8 @@ import { PiLinkSimple } from "react-icons/pi";
 import { HiDownload } from "react-icons/hi";
 import {FacebookShareButton,TwitterShareButton,WhatsappShareButton,FacebookMessengerShareButton } from "react-share"
 import Image from 'next/image'
+import slugify from "react-slugify"
+
 const ShareModal=({isVisible,onClose,link,qr_code,catalog_name}: {isVisible:boolean,onClose:any,link:any,qr_code:any,catalog_name:any})=>{
     if ( !isVisible ) return null;
 
@@ -49,7 +51,7 @@ const ShareModal=({isVisible,onClose,link,qr_code,catalog_name}: {isVisible:bool
      
             <div className="p-4 md:p-3 flex justify-center items-center break-words">
                 <p className="text-gray-500 break-words w-full text-center">
-                    {`https://www.whinst.com/catalog_viewer/${catalog_name}/${link}`}
+                    {`https://www.whinst.com/catalog_viewer/${slugify(catalog_name)}/${link}`}
                 </p>
             </div>
          
@@ -62,20 +64,20 @@ const ShareModal=({isVisible,onClose,link,qr_code,catalog_name}: {isVisible:bool
                 </div>
 
                 <div className='flex flex-col items-center'>
-                <button onClick={()=>navigator.clipboard.writeText(`https://www.whinst.com/catalog_viewer/${catalog_name}/${link}`)}>
+                <button onClick={()=>navigator.clipboard.writeText(`https://www.whinst.com/catalog_viewer/${slugify(catalog_name)}/${link}`)}>
                   <PiLinkSimple size={23}/>
                 </button>
                 <p>Copy</p>
                 </div>
                 <div className='flex flex-col items-center'>
                     <div className='flex items-center justify-center space-x-4 border-gray-200 rounded-b'>
-                    <FacebookShareButton url={`https://www.whinst.com/catalog_viewer/${catalog_name}/${link}`}>
+                    <FacebookShareButton url={`https://www.whinst.com/catalog_viewer/${slugify(catalog_name)}/${link}`}>
             <BsFacebook size={23}/>
            </FacebookShareButton>
-           <TwitterShareButton url={`https://www.whinst.com/catalog_viewer/${catalog_name}/${link}`}>
+           <TwitterShareButton url={`https://www.whinst.com/catalog_viewer/${slugify(catalog_name)}/${link}`}>
             <BsTwitterX size={23}/>
            </TwitterShareButton>
-           <WhatsappShareButton url={`https://www.whinst.com/catalog_viewer/${catalog_name}/${link}`}>
+           <WhatsappShareButton url={`https://www.whinst.com/catalog_viewer/${slugify(catalog_name)}/${link}`}>
             <BsWhatsapp size={23}/>
           </WhatsappShareButton>
                     </div>
