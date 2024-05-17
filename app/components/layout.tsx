@@ -186,7 +186,7 @@ const CancelSubBox=()=>{
 
 
          useEffect(() => {
-          initializePaddle({ environment:'sandbox', token: AUTH_TOKEN,eventCallback(event) { //production
+          initializePaddle({ environment:'production', token: AUTH_TOKEN,eventCallback(event) { //production
             if(event.name == "checkout.completed")  {
               router.refresh()
             }
