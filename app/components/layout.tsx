@@ -26,6 +26,7 @@ const Layout =({children,email,id,paid}:any)=>{
   const [paddle, setPaddle] = useState<Paddle>();
   const router = useRouter()
   const AUTH_TOKEN =  process.env.WHINST_TEST_API_KEY!
+  const SELLER_ID:any = process.env.PADDLE_VENDOR_ID!
     const [isOpen,setIsOpen] = useState(false)
     const [isOpenContact,setIsOpenContact] = useState(false)
     const [showContactModal,setShowContactModal] = useState(false)
@@ -186,7 +187,7 @@ const CancelSubBox=()=>{
 
 
          useEffect(() => {
-          initializePaddle({ environment:'production', token: AUTH_TOKEN,eventCallback(event) { //production
+          initializePaddle({ environment:'production', token: AUTH_TOKEN,seller:SELLER_ID,eventCallback(event) { //production
             if(event.name == "checkout.completed")  {
               router.refresh()
             }
