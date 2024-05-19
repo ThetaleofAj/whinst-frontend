@@ -206,7 +206,7 @@ const CancelSubBox=()=>{
 
         const openCheckout = () => {
           paddle?.Checkout.open({
-            items: [{ priceId: 'pro_01hxxj4jkygx03g74e0sccgm7d'}], //pro_01hxxj4jkygx03g74e0sccgm7d
+            items: [{ priceId: 'pro_01hxxj4jkygx03g74e0sccgm7d', quantity: 1 }], //pro_01hxxj4jkygx03g74e0sccgm7d
             customer:{
               email:email
              
