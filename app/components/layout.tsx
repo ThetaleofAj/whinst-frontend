@@ -187,7 +187,7 @@ const CancelSubBox=()=>{
 
 
          useEffect(() => {
-          initializePaddle({ environment:'production', token: AUTH_TOKEN,seller:SELLER_ID,eventCallback(event) { //production
+          initializePaddle({ environment:'production', token:AUTH_TOKEN,eventCallback(event) { //production
             if(event.name == "checkout.completed")  {
               router.refresh()
             }
@@ -388,7 +388,7 @@ const CancelSubBox=()=>{
     {children}
 </div>
 <div className='bg-white border-t-2 mt-5'>
-  <p className='flex justify-center p-2'>© {year} Whinst</p>
+  <p className='flex justify-center p-2'>© {year} Whinst {AUTH_TOKEN}</p>
 </div>
 </div>
         </>
