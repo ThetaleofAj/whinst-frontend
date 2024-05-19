@@ -388,7 +388,7 @@ const CancelSubBox=()=>{
     {children}
 </div>
 <div className='bg-white border-t-2 mt-5'>
-  <p className='flex justify-center p-2'>© {year} Whinst {AUTH_TOKEN}</p>
+  <p className='flex justify-center p-2'>© {year} Whinst</p>
 </div>
 </div>
         </>
