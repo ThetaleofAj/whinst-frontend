@@ -188,6 +188,7 @@ const CancelSubBox=()=>{
 
          useEffect(() => {
           initializePaddle({ environment:'production', token:'live_3edebb0cc4e3e1563cdb445855a',eventCallback(event) { //production
+            console.log(event)
             if(event.name == "checkout.completed")  {
               router.refresh()
             }
