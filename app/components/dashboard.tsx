@@ -7,13 +7,8 @@ import { HiShare } from "react-icons/hi2";
 import Image from 'next/image'
 import { IoMenuSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
-import { initializePaddle, Paddle } from '@paddle/paddle-js';
-import { useRouter } from 'next/navigation'
 
 export default function Dashboard(){
-  const [paddle, setPaddle] = useState<Paddle>();
-  const router = useRouter()
-  const AUTH_TOKEN =  process.env.WHINST_TEST_API_KEY!
     const [isOpen,setIsOpen] = useState(false)
     const [index,setIndex] = useState(0)
     const dropDown =()=>{
@@ -28,19 +23,7 @@ export default function Dashboard(){
 
     useEffect(()=>{
       setTimeout(()=>setIndex((prevIndex)=>prevIndex === images.length - 1 ? 0 : prevIndex + 1),2500)
-    //  return ()=>{}
-
-      initializePaddle({ environment:'production', token:AUTH_TOKEN,eventCallback(event) { //production
-        if(event.name == "checkout.completed")  {
-          router.refresh()
-        }
-      }, }).then(
-        (paddleInstance: Paddle | undefined) => {
-          if (paddleInstance) {
-            setPaddle(paddleInstance);
-          }
-        },
-      );
+      return ()=>{}
 
     },[index])
 
