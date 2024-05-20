@@ -1,5 +1,5 @@
-import BlogClient from "../components/blog_client";
 'use client';
+import BlogClient from "../components/blog_client";
 import { useRouter } from 'next/navigation'
 import { initializePaddle, Paddle } from '@paddle/paddle-js';
 import { useEffect, useState } from 'react';
