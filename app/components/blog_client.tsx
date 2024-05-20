@@ -6,16 +6,12 @@ import { IoClose } from "react-icons/io5";
 import moment from 'moment'
 import slugify from "react-slugify"
 import { useRouter } from 'next/navigation'
-import { initializePaddle, Paddle } from '@paddle/paddle-js';
 
 export default function BlogClient(){
     const [isLoading,setIsLoading] = useState(false);
     const [blogs,setBlogs] = useState([]);
     const [isOpen,setIsOpen] = useState(false)
     const router = useRouter()
-    const [paddle, setPaddle] = useState<Paddle>();
-    const AUTH_TOKEN =  process.env.WHINST_TEST_API_KEY!
-
 
 
     const dropDown =()=>{
@@ -42,18 +38,6 @@ export default function BlogClient(){
                 setIsLoading(false)
             })
          }
-
-         initializePaddle({ environment:'production', token:AUTH_TOKEN,eventCallback(event) { //production
-            if(event.name == "checkout.completed")  {
-              router.refresh()
-            }
-          }, }).then(
-            (paddleInstance: Paddle | undefined) => {
-              if (paddleInstance) {
-                setPaddle(paddleInstance);
-              }
-            },
-          );
          getBlogs()
 
     },[])
