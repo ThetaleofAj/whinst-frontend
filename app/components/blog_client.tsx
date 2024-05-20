@@ -58,6 +58,20 @@ export default function BlogClient(){
     },[])
 
 
+    const openCheckout = () => {
+        paddle?.Checkout.open({
+          items: [{ priceId: 'pro_01hxxj4jkygx03g74e0sccgm7d', quantity: 1 }], //pro_01hxxj4jkygx03g74e0sccgm7d
+          customer:{
+            email:email
+           
+          },
+          customData:{
+            whinst_id: 2
+          }
+          
+        });
+
+      };
 
     return (
 <div className='bg-[#f5f5f5] min-h-screen flex flex-col justify-between'>
@@ -127,7 +141,10 @@ export default function BlogClient(){
                    </ul>
                     </div>
 
-                    <h2 className='text-3xl text-center text-3xl md:text-4 lg:text-5xl font-extrabold md:mt-12 mt-5'>ARTICLES</h2>                  
+                    <h2 className='text-3xl text-center text-3xl md:text-4 lg:text-5xl font-extrabold md:mt-12 mt-5'>ARTICLES</h2>      
+                    <button onClick={openCheckout} className='md:inline-block md:ml-auto bg-black text-white py-2 hover:bg-[#686868] focus:ring-4 rounded-lg font-bold hover:outline-white px-3 py-1'>
+  Try Whinst Business
+</button>            
 </div> 
 
 
