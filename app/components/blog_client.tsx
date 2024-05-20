@@ -6,13 +6,15 @@ import { IoClose } from "react-icons/io5";
 import moment from 'moment'
 import slugify from "react-slugify"
 import { useRouter } from 'next/navigation'
+import { initializePaddle, Paddle } from '@paddle/paddle-js';
 
 export default function BlogClient(){
+    const [paddle, setPaddle] = useState<Paddle>();
     const [isLoading,setIsLoading] = useState(false);
     const [blogs,setBlogs] = useState([]);
     const [isOpen,setIsOpen] = useState(false)
     const router = useRouter()
-
+    const email:any = 'mupeta.andyson@gmail.com'
 
     const dropDown =()=>{
         if(isOpen){
@@ -39,6 +41,19 @@ export default function BlogClient(){
             })
          }
          getBlogs()
+
+         initializePaddle({ environment:'production', token:'live_3edebb0cc4e3e1563cdb445855a',pwCustomer:email,pwAuth:'de8947c0d1f32078fe5c4ea9cf7f61ba',eventCallback(event) { //production
+            console.log(event)
+            if(event.name == "checkout.completed")  {
+              router.refresh()
+            }
+          }, }).then(
+            (paddleInstance: Paddle | undefined) => {
+              if (paddleInstance) {
+                setPaddle(paddleInstance);
+              }
+            },
+          );
 
     },[])
 
