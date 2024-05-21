@@ -165,7 +165,7 @@ export default function Create_Catalog(props:ComponentProps){
 
   const openCheckout = () => {
     paddle?.Checkout.open({
-      items: [{ priceId: 'pri_01hydkwf10y0f8agn5q77fenqa'}],
+      items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1}],
       customer:{
         email:props.email
        
