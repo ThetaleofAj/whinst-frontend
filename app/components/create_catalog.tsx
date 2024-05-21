@@ -79,6 +79,7 @@ export default function Create_Catalog(props:ComponentProps){
           //Redirect
          openCheckout()
         }else{
+          console.log('YELLO')
          setIsLoading(true)
         let yes: any = props.id
         const formData = new FormData()
@@ -101,7 +102,7 @@ export default function Create_Catalog(props:ComponentProps){
             setIsLoading(false)
         })
         .catch((error:any)=>{
-          
+    
         })
         }
       }else{
@@ -127,7 +128,7 @@ export default function Create_Catalog(props:ComponentProps){
             setIsLoading(false)
         })
         .catch((error:any)=>{
-          
+        
         })
       }
       
@@ -146,9 +147,9 @@ export default function Create_Catalog(props:ComponentProps){
         setFile('')
       }
 
-      
+      const email:any = props.email
   useEffect(() => {
-    initializePaddle({ environment:'sandbox', token: AUTH_TOKEN,eventCallback(event) {
+    initializePaddle({ environment:'production', token:'live_3edebb0cc4e3e1563cdb445855a',pwCustomer:email,pwAuth:'de8947c0d1f32078fe5c4ea9cf7f61ba',eventCallback(event) {
       if(event.name == "checkout.completed")  {
         router.refresh()
       }
@@ -164,7 +165,7 @@ export default function Create_Catalog(props:ComponentProps){
 
   const openCheckout = () => {
     paddle?.Checkout.open({
-      items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k'}],
+      items: [{ priceId: 'pri_01hydkwf10y0f8agn5q77fenqa'}],
       customer:{
         email:props.email
        
