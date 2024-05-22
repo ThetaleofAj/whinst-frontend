@@ -7,6 +7,7 @@ import { HiShare } from "react-icons/hi2";
 import Image from 'next/image'
 import { IoMenuSharp } from "react-icons/io5";
 import { IoClose } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Dashboard(){
     const [isOpen,setIsOpen] = useState(false)
@@ -298,7 +299,8 @@ export default function Dashboard(){
 
 {/* SECTION 6 */}
 <div className='md:mt-28 mt-16 mb-5 md:mb-10'>
-<p className='text-center text-3xl font-semibold'>Get started today!</p>
+<p className='text-center text-3xl font-semibold'>Get started for free today!</p>
+<p className='text-center text-2xl'>No credit card required</p>
 </div>
     <div className="container flex flex-col lg:flex-row items-center mt-5 lg:mt-10 justify-center md:space-x-5 mb-10 gap-2">
         
@@ -322,22 +324,10 @@ export default function Dashboard(){
 
         <div className="flex flex-col items-center">
             <p className="font-bold text-center text-courseassist-orange text-lg">Social</p>
-            {/* <div className='flex flex-row items-center '>
-            <BsTwitter/>
-            <p class="text-center text-black pl-1"> CourseAssist</p>
-            </div>
             <div className='flex flex-row items-center '>
-            <BsFacebook/>
-            <p class="text-center text-black pl-1"> CourseAssist</p>
-            </div> */}
-            {/* <div className='flex flex-row items-center '>
-         
-           <a href='https://www.instagram.com/_courseassist/?igshid=ZDdkNTZiNTM%3D' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">_courseassist</p></a>
+            <FaFacebook size={23}/>
+           <a href='https://www.facebook.com/profile.php?id=61559746778047&mibextid=ZbWKwL' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">Whinst</p></a>
             </div>
-            <div className='flex flex-row items-center '>
-       
-           <a href='https://www.facebook.com/profile.php?id=100094626365981&mibextid=ZbWKwL' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">Course Assist</p></a>
-            </div> */}
         </div>
 
         <div className="flex flex-col items-center">
