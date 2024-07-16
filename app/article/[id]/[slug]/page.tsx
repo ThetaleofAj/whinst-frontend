@@ -20,11 +20,18 @@ export const generateMetadata = async ({params}:Props):Promise<Metadata> =>{
     const blog = await getData(params.id)
   
     return{
-      title: blog.title,
-      description: blog.description,
       openGraph:{
+        title: blog.title,
+        description: blog.description,
+        images: blog.image
+
+      },
+      twitter:{
+        title: blog.title,
+        description: blog.description,
         images: blog.image
       }
+   
     }
   }
 
