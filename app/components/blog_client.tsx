@@ -34,7 +34,7 @@ export default function BlogClient(){
                }
             }).then((response)=>response.json())
             .then((json)=>{
-              setBlogs(json)
+              setBlogs(json.reverse())
               setIsLoading(false)
             }).catch((error)=>{
                 setIsLoading(false)
