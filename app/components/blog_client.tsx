@@ -7,6 +7,7 @@ import moment from 'moment'
 import slugify from "react-slugify"
 import { useRouter } from 'next/navigation'
 import { initializePaddle, Paddle } from '@paddle/paddle-js';
+import { FaFacebook } from "react-icons/fa";
 
 export default function BlogClient(){
     const [paddle, setPaddle] = useState<Paddle>();
@@ -180,6 +181,10 @@ export default function BlogClient(){
 
         <div className="flex flex-col items-center">
             <p className="font-bold text-center text-courseassist-orange text-lg">Social</p>
+            <div className='flex flex-row items-center '>
+            <FaFacebook size={23}/>
+           <a href='https://www.facebook.com/profile.php?id=61559746778047&mibextid=ZbWKwL' target="_blank"  rel="noreferrer noopener"><p className="text-center text-black pl-1">Whinst</p></a>
+            </div>
             {/* <div className='flex flex-row items-center '>
             <BsTwitter/>
             <p class="text-center text-black pl-1"> CourseAssist</p>
@@ -202,6 +207,7 @@ export default function BlogClient(){
             <p className="font-bold text-center text-courseassist-orange text-lg">Legal</p>
             <Link href="/privacy_policy"><p className="text-center text-black">Privacy Policy</p></Link>
             <Link href="/terms_and_conditions"><p className="text-center text-black">Terms of Service</p></Link>
+            <Link href="/refund_policy"><p className="text-center text-black">Refund Policy</p></Link>
         </div>
     </div>
   </section>
