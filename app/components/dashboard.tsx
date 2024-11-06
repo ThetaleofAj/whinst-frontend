@@ -26,7 +26,7 @@ export default function Dashboard(){
       setTimeout(()=>setIndex((prevIndex)=>prevIndex === images.length - 1 ? 0 : prevIndex + 1),2500)
       return ()=>{}
 
-    },[index]) //
+    },[index]) ////
 
 
     return(
