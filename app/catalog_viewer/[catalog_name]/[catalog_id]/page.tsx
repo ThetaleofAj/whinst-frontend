@@ -63,8 +63,8 @@ export default async function CatalogViewer({ params }: { params: { catalog_id: 
     const user = await getUser(data.catalog.user_id)
  const products: productProps[] = await getProducts(params.catalog_id)
 
-
- if(data.catalog.default_catalog == false && user.paid == null){
+ //if(data.catalog.default_catalog == false && user.paid == null){
+ if(user.paid == null){
     return (
       <div className="h-screen flex flex-col justify-center items-center">
       <p className='md:p-0 p-2'>This catalog is not available!😐</p>

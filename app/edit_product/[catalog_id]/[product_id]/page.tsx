@@ -68,8 +68,9 @@ if(session.user.id != catalog.catalog.user_id && session.user.role != 'admin'){
   redirect(`/catalog_viewer/${catalog.catalog.catalog_name}/${catalog.catalog.id}`)
 }
 
+//if(catalogs.length > 1 && user.paid == null){
 
-if(catalogs.length > 1 && user.paid == null){
+if(user.paid == null){
   return(
     <div className="h-screen flex flex-col justify-center items-center">
     <p className='md:p-0 p-2'>This catalog is locked! Renew your subscription to unlock it!😅</p>

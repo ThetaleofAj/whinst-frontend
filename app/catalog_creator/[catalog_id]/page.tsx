@@ -95,8 +95,8 @@ export default async function CatalogCreator({ params }: { params: { catalog_id:
       }
 
      
-
-      if(data.catalog.default_catalog == false && user.paid == null){
+      //if(data.catalog.default_catalog == false && user.paid == null){
+      if(user.paid == null){
         return (
           <div className="h-screen flex flex-col justify-center items-center">
           <p className='md:p-0 p-2'>This catalog is locked! Renew your subscription to unlock it!😅</p>

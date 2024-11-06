@@ -23,7 +23,8 @@ export default function Search(props:any){
   
 
 const data: CatalogProps[] = props;
-if(props.props.length > 1 && props.paid == null){
+//props.props.length > 1 
+if(props.paid == null){
     return(
         <>
         <div className="flex justify-center mt-5">

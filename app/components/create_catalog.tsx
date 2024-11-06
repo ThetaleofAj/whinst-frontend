@@ -74,12 +74,15 @@ export default function Create_Catalog(props:ComponentProps){
       const negative = false
       const userCatalogs = await getUserCatalogs()
       const user = await getUser()
-      if(userCatalogs.length >= 1){
+
+
+
+
+   //   if(userCatalogs.length >= 1){
         if(!user.paid){
           //Redirect
          openCheckout()
         }else{
-          console.log('YELLO')
          setIsLoading(true)
         let yes: any = props.id
         const formData = new FormData()
@@ -105,32 +108,37 @@ export default function Create_Catalog(props:ComponentProps){
     
         })
         }
-      }else{
-        setIsLoading(true)
-        let yes: any = props.id
-        const formData = new FormData()
-        formData.append('catalog_name',propsTwo.name)
-        formData.append('user_id',yes)
-        formData.append('store_logo',file)
-        formData.append('default_catalog','true')
-        formData.append('currency',currency)
-        formData.append('phone_number',propsTwo.number)
-        formData.append('email',propsTwo.email)
-        await fetch('https://whinst-backend.cyou/create_catalog/',{
-            method:'POST',
-            body:formData,
-        }).then((data=>data.json()))
-        .then((res:ResProps)=>{
+  //    }else{
+        // setIsLoading(true)
+        // let yes: any = props.id
+        // const formData = new FormData()
+        // formData.append('catalog_name',propsTwo.name)
+        // formData.append('user_id',yes)
+        // formData.append('store_logo',file)
+        // formData.append('default_catalog','true')
+        // formData.append('currency',currency)
+        // formData.append('phone_number',propsTwo.number)
+        // formData.append('email',propsTwo.email)
+        // await fetch('https://whinst-backend.cyou/create_catalog/',{
+        //     method:'POST',
+        //     body:formData,
+        // }).then((data=>data.json()))
+        // .then((res:ResProps)=>{
           
-            if(res.id){
-                router.push(`/catalog_creator/${res.id}/`)
-            }
-            setIsLoading(false)
-        })
-        .catch((error:any)=>{
+        //     if(res.id){
+        //         router.push(`/catalog_creator/${res.id}/`)
+        //     }
+        //     setIsLoading(false)
+        // })
+        // .catch((error:any)=>{
         
-        })
-      }
+        // })
+   //   }
+
+
+
+
+      
       
       }
 
