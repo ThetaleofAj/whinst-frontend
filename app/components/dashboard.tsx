@@ -242,7 +242,7 @@ export default function Dashboard(){
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $20 <span className="text-base font-normal">/month</span>
+      $249 <span className="text-base font-normal">/year</span>
     </p>
 
 
@@ -266,7 +266,9 @@ export default function Dashboard(){
         Sign Up
         </Link>
       {/* </button> */}
+      
     </div>
+    <p className='text-center mt-2'>Pay now and access it for a whole year</p>
   </div>
 
     </div>
