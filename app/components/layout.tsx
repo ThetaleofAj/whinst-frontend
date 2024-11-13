@@ -320,8 +320,8 @@ const CancelSubBox=()=>{
 
         const openCheckout = () => {
           paddle?.Checkout.open({
-            // items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1, }], //pro_01hxxj4jkygx03g74e0sccgm7d
-            items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k', quantity: 1, }],
+             items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1, }], //pro_01hxxj4jkygx03g74e0sccgm7d
+           // items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k', quantity: 1, }],
             customer:{
               email:email
              
