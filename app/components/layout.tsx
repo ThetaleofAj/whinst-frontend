@@ -386,11 +386,13 @@ const CancelSubBox=()=>{
 
 {
   paid == 'starter' ? ( <>
+  <div className='relative md:block'>
     <button onClick={openCheckout} className='hidden md:inline-block md:ml-auto bg-black text-white py-2 hover:bg-[#686868] focus:ring-4 rounded-lg font-bold hover:outline-white px-3 py-1'>
     Try Whinst Business
     <div className="absolute top-0 right-0 -mr-1 -mt-1 w-4 h-4 rounded-full bg-[#ffb31f] animate-ping"></div>
       <div className="absolute top-0 right-0 -mr-1 -mt-1 w-4 h-4 rounded-full bg-[#ffb31f]"></div>
   </button>
+  </div>
   </> ):(<>
     <div className=' hidden md:block'>
         <div className='flex flex-row ml-2 mr-2 mt-1 items-center justify-center gap-1'>
@@ -433,8 +435,26 @@ const CancelSubBox=()=>{
 </button>
                     </div>
                       </>):(<>
-                        <div className='relative'>
+
+
+                      {
+                          paid == 'starter' ? (<>
+
+<div className='relative'>
                         <button onClick={dropDown}>
+<UserCircleIcon className="h-8 w-8" stroke='black'/>
+<div className='md:hidden'>
+<div className="absolute top-0 right-0 -mr-1 -mt-1 w-4 h-4 rounded-full bg-[#ffb31f] animate-ping"></div>
+<div className="absolute top-0 right-0 -mr-1 -mt-1 w-4 h-4 rounded-full bg-[#ffb31f]"></div>
+</div>
+
+</button>
+                    </div>
+
+                          </>):(
+
+<div className='relative'>
+<button onClick={dropDown}>
 <UserCircleIcon className="h-8 w-8" stroke='black'/>
 <div className='md:hidden'>
 <div className="absolute top-0 right-0 -mr-1 -mt-1 w-4 h-4">
@@ -443,7 +463,10 @@ const CancelSubBox=()=>{
 </div>
 
 </button>
-                    </div>
+</div>
+                          )
+                      }
+              
                       </>)
                     }
                 
