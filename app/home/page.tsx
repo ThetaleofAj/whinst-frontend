@@ -59,7 +59,7 @@ export default async function Home() {
 
 
 
-  const catalogs: CatalogProps[] = await getData(session.user.id)
+ // const catalogs: CatalogProps[] = await getData(session.user.id)
 
   return (
  

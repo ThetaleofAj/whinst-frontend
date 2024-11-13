@@ -295,10 +295,12 @@ const CancelSubBox=()=>{
 
 
          useEffect(() => {
-          initializePaddle({ environment:'production', token:'live_3edebb0cc4e3e1563cdb445855a',pwCustomer:email,pwAuth:'de8947c0d1f32078fe5c4ea9cf7f61ba',eventCallback(event) { //production
+           initializePaddle({ environment:'production', token:'live_3edebb0cc4e3e1563cdb445855a',pwCustomer:email,pwAuth:'de8947c0d1f32078fe5c4ea9cf7f61ba',eventCallback(event) { //production
+         // initializePaddle({ environment:'sandbox', token:'test_fbd1e978a2ddd8b0d2075b39c57',pwCustomer:email,eventCallback(event) {
             console.log(event.data?.status)
             if(event.data?.status == "completed")  {
               router.refresh()
+              setShowPlanModal(false)
             }
           }, }).then(
             (paddleInstance: Paddle | undefined) => {
@@ -310,12 +312,16 @@ const CancelSubBox=()=>{
 
         }, []);
 
+        const testRefresh=()=>{
+          router.refresh()
+        }
      
 
 
         const openCheckout = () => {
           paddle?.Checkout.open({
-            items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1, }], //pro_01hxxj4jkygx03g74e0sccgm7d
+            // items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1, }], //pro_01hxxj4jkygx03g74e0sccgm7d
+            items: [{ priceId: 'pri_01hvrry5y3pmmk7x3cyj9j8p1k', quantity: 1, }],
             customer:{
               email:email
              
