@@ -79,34 +79,40 @@ export default function Create_Catalog(props:ComponentProps){
 
 
    //   if(userCatalogs.length >= 1){
-        if(!user.paid){
+        if(user.paid == null){
           //Redirect
          openCheckout()
         }else{
-         setIsLoading(true)
-        let yes: any = props.id
-        const formData = new FormData()
-        formData.append('catalog_name',propsTwo.name)
-        formData.append('user_id',yes)
-        formData.append('store_logo',file)
-        formData.append('default_catalog','false')
-        formData.append('currency',currency)
-        formData.append('phone_number',propsTwo.number)
-        formData.append('email',propsTwo.email)
-        await fetch('https://whinst-backend.cyou/create_catalog/',{
-            method:'POST',
-            body:formData,
-        }).then((data=>data.json()))
-        .then((res:ResProps)=>{
-         
-            if(res.id){
-                router.push(`/catalog_creator/${res.id}/`)
-            }
-            setIsLoading(false)
-        })
-        .catch((error:any)=>{
+          if(userCatalogs.length = 1 && user.paid == 'starter'){
+            starterCheckout()
+          }else{
+            setIsLoading(true)
+            let yes: any = props.id
+            const formData = new FormData()
+            formData.append('catalog_name',propsTwo.name)
+            formData.append('user_id',yes)
+            formData.append('store_logo',file)
+            formData.append('default_catalog','false')
+            formData.append('currency',currency)
+            formData.append('phone_number',propsTwo.number)
+            formData.append('email',propsTwo.email)
+            await fetch('https://whinst-backend.cyou/create_catalog/',{
+                method:'POST',
+                body:formData,
+            }).then((data=>data.json()))
+            .then((res:ResProps)=>{
+             
+                if(res.id){
+                    router.push(`/catalog_creator/${res.id}/`)
+                }
+                setIsLoading(false)
+            })
+            .catch((error:any)=>{
+        
+            })
+
+          }
     
-        })
         }
   //    }else{
         // setIsLoading(true)
@@ -173,7 +179,7 @@ export default function Create_Catalog(props:ComponentProps){
 
   const openCheckout = () => {
     paddle?.Checkout.open({
-      items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1}],
+      items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1},{priceId: 'pri_01jcg83ccw1wpab31f6kj06v96', quantity: 1}],
       customer:{
         email:props.email
        
@@ -184,6 +190,20 @@ export default function Create_Catalog(props:ComponentProps){
       
     });
   };
+
+  const starterCheckout=()=>{
+    paddle?.Checkout.open({
+      items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1}],
+      customer:{
+        email:props.email
+       
+      },
+      customData:{
+        whinst_id: props.id
+      }
+      
+    });
+  }
 
 
     return(

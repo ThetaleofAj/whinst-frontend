@@ -229,12 +229,45 @@ export default function Dashboard(){
 <p className='text-center text-3xl font-semibold'>Pricing</p>
 </div>
 
-<div className='md:mt-1 mt-1 mb-5 md:mb-10'>
-<p className='text-center text-2xl'>Get started with a 7 day free trial!</p>
-</div>
-
 {/* SECTION 5 */}
     <div className="container flex flex-col lg:flex-row items-center justify-center mt-5 md:gap-10 gap-5">
+
+
+    <div className="shadow p-5 rounded-lg border-t-4 border-[#686868] bg-white md:w-1/3 w-full">
+    <p className="uppercase text-sm font-medium">
+      Starter
+    </p>
+
+    <p className="mt-4 text-3xl font-medium">
+      $119
+    </p>
+
+
+    <div className="mt-8">
+      <ul className="grid grid-cols-1 gap-4">
+        <li className="inline-flex items-center">
+          <svg className="w-4 h-4 mr-2 fill-current text-[#686868]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM371.8 211.8l-128 128C238.3 345.3 231.2 348 224 348s-14.34-2.719-19.81-8.188l-64-64c-10.91-10.94-10.91-28.69 0-39.63c10.94-10.94 28.69-10.94 39.63 0L224 280.4l108.2-108.2c10.94-10.94 28.69-10.94 39.63 0C382.7 183.1 382.7 200.9 371.8 211.8z"></path>
+          </svg>
+
+          Create 1 digital catalog
+        </li>
+
+      </ul>
+    </div>
+
+    <div className="mt-8 flex justify-center items-center">
+      {/* <button className="bg-[#000000] hover:bg-[#686868] px-3 py-2 rounded-lg w-full text-white"> */}
+        <Link href="/auth/sign-up" className='px-3 py-2 rounded-lg w-full focus:ring-4 text-white font-bold text-center hover:bg-[#686868] bg-black'>
+                                
+        Sign Up
+        </Link>
+      {/* </button> */}
+      
+    </div>
+    <p className='text-center mt-2'>Pay once and access it forever</p>
+  </div>
+
 
   <div className="shadow p-5 rounded-lg border-t-4 border-[#ffb31f] bg-white md:w-1/3 w-full">
     <p className="uppercase text-sm font-medium">
@@ -242,7 +275,7 @@ export default function Dashboard(){
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $249 <span className="text-base font-normal">/year</span>
+      $249
     </p>
 
 
@@ -268,8 +301,9 @@ export default function Dashboard(){
       {/* </button> */}
       
     </div>
-    <p className='text-center mt-2'>Pay now and access it for a whole year</p>
+    <p className='text-center mt-2'>Pay once and access it forever</p>
   </div>
+
 
     </div>
 

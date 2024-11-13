@@ -4,7 +4,7 @@ export default function TermsAndConditions(){
     return(
      <div className='flex flex-col space-y-2 p-2'>
 <p><strong>Terms and Conditions</strong></p>
-<p><strong>15/05/2024</strong></p>
+<p><strong>13/11/2024</strong></p>
 <p><strong>1. Introduction</strong></p>
 <p>Welcome to Whinst! These terms and conditions govern your use of our SaaS platform and any related services provided by us. By accessing or using Whinst, you agree to be bound by these terms and conditions. If you disagree with any part of these terms and conditions, you may not access or use Whinst.</p>
 <p><strong>2. License to Use Whinst</strong></p>
@@ -24,6 +24,8 @@ export default function TermsAndConditions(){
 <p>6.2. Upon termination, your right to use Whinst will immediately cease, and you must cease all use of Whinst.</p>
 <p><strong>7. Limitation of Liability</strong></p>
 <p>7.1. In no event shall Whinst Inc., nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use Whinst; (ii) any conduct or content of any third party on Whinst.</p>
+<p>7.2. In the unlikely event that Whinst.com is shut down for good after you've paid the one-time fee, Whinst Inc., nor its directors, employees, partners, agents, suppliers, or affiliates, will not be liable for any inconvenience
+ caused nor will a refund be provided</p>
 <p><strong>8. Governing Law</strong></p>
 <p>8.1. These terms and conditions shall be governed by and construed in accordance with the laws of Zambia, without regard to its conflict of law provisions.</p>
 <p><strong>9. Changes to Terms and Conditions</strong></p>

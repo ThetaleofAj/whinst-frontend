@@ -207,7 +207,7 @@ const CancelSubBox=()=>{
 
         const openCheckout = () => {
           paddle?.Checkout.open({
-            items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1 }], //pro_01hxxj4jkygx03g74e0sccgm7d
+            items: [{ priceId: 'pri_01hxxj5pqmdmdkdst1hg09pk9e', quantity: 1, },{priceId: 'pri_01jcg83ccw1wpab31f6kj06v96', quantity: 1}], //pro_01hxxj4jkygx03g74e0sccgm7d
             customer:{
               email:email
              
@@ -347,11 +347,11 @@ const CancelSubBox=()=>{
 
       <Link href="/my_account" className="text-gray-700 block px-4 py-2 text-sm  hover:bg-[#f5f5f5] " role="menuitem"  id="menu-item-0">Account settings</Link>
       <a href="#" className="text-gray-700 block px-4 py-2 text-sm  hover:bg-[#f5f5f5]" role="menuitem"  id="menu-item-1" onClick={()=>setShowContactModal(true)}>Contact</a>
-      {
+      {/* {
         paid == null ? (<></>):( <button className="text-gray-700 block w-full px-4 py-2 text-left text-sm  hover:bg-[#f5f5f5]" onClick={CancelSubscription}>
         Cancel Subscription
       </button>)
-      }
+      } */}
       <Link href="/terms_and_conditions" className="text-gray-700 block w-full px-4 py-2 text-left text-sm  hover:bg-[#f5f5f5]" role="menuitem" >Terms and Conditions</Link>
       <Link href="/privacy_policy" className="text-gray-700 block w-full px-4 py-2 text-left text-sm  hover:bg-[#f5f5f5]" role="menuitem" >Privacy policy</Link>
     <button className="text-gray-700 block w-full px-4 py-2 text-left text-sm  hover:bg-[#f5f5f5]" onClick={()=>SetShowModal(true)}>Sign out</button>
