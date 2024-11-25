@@ -175,7 +175,7 @@ const CancelSubBox=()=>{
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $119
+      $29
     </p>
 
 
@@ -210,7 +210,7 @@ const CancelSubBox=()=>{
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $249
+      $79
     </p>
 
 

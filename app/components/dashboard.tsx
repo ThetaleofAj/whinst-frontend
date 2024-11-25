@@ -239,7 +239,7 @@ export default function Dashboard(){
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $119
+      $29
     </p>
 
 
@@ -275,7 +275,7 @@ export default function Dashboard(){
     </p>
 
     <p className="mt-4 text-3xl font-medium">
-      $249
+      $79
     </p>
 
 
