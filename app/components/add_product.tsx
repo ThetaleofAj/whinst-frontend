@@ -8,6 +8,8 @@ import Link from 'next/link';
 import Image from 'next/image'
 import {XMarkIcon} from '@heroicons/react/24/outline'
 const VideoPlayer = dynamic(() => import("react-player/lazy"), {ssr: false});
+import getCroppedImg from './getCroppedImage';
+import Cropper from 'react-easy-crop'
 
 
 interface ProductForm {
@@ -29,6 +31,8 @@ const validationSchema = Yup.object({
     product_name: Yup.string().required('Required'),  
   })
 
+
+
  
   
 export default function AddProductComponent(){
@@ -45,6 +49,21 @@ export default function AddProductComponent(){
     const fileInput = useRef<any>()
     const [isloading,setIsLoading] = useState(false)
     const [fileNotification,setFileNotification] = useState(false);
+    const [isOpen,setIsOpen] = useState(false)
+    const [showEditImageModal,setShowEditImageModal] = useState(false)
+    const [crop, setCrop] = useState({ x: 0, y: 0 })
+    const [rotation, setRotation] = useState(0)
+    const [zoom, setZoom] = useState(1)
+    const [croppedAreaPixels, setCroppedAreaPixels] = useState(null)
+    const [croppedImage, setCroppedImage] = useState(null)
+    
+
+    const onCropComplete = (croppedArea:any, croppedAreaPixels:any) => {
+      setCroppedAreaPixels(croppedAreaPixels)
+    }
+
+ 
+  
 
 
     const handleClick =(e: MouseEvent<HTMLButtonElement>)=>{
@@ -86,6 +105,13 @@ const clearFile =()=>{
 }
 
     const onSubmit= async (props:ProductForm)=>{
+
+      const croppedImage:any = await getCroppedImg(
+        URL.createObjectURL(file),
+        croppedAreaPixels,
+        rotation
+      )
+
     //  setIsLoading(true)
         if(file !== ""){
     //      if(file.type == 'video/mp4' && thumbnail == ''){
@@ -95,7 +121,7 @@ const clearFile =()=>{
             const unique_id = crypto.randomUUID()
             let yes: any = params.catalog_id 
             const formData = new FormData()
-            formData.append('product_file',file)
+            formData.append('product_file',new File([croppedImage],'image.jpeg',{type:croppedImage.type}))
             formData.append('catalog_id',yes)
             formData.append('product_name',props.product_name)
             formData.append('product_description',props.product_description)
@@ -127,6 +153,8 @@ const clearFile =()=>{
       }
 
       const handleFile=async(e:any)=>{
+        console.log(e.target.files[0])
+        setShowEditImageModal(true)
         setVideoPreview(e.target.files[0])
         setFile(e.target.files[0])
           if(e.target.files[0].type == 'video/mp4'){
@@ -162,9 +190,10 @@ const clearFile =()=>{
 
 
     return(
-      
+
         <div>
           <div className='flex justify-center m-2'>
+          
           {
             fileNotification ? (
               <div className="md:w-3/12 w-5/6 bg-[#ffd7b5] rounded-lg md:mt-0 sm:max-w-md xl:p-0 border-red-300 border m-3 h-10 flex flex-row justify-center items-center md:gap-10 gap-3">
@@ -218,14 +247,26 @@ file.type == 'video/mp4' ? (<div className='flex flex-col justify-center items-c
    </div>
 </div>
 
-):(<div className='w-screen flex flex-col justify-center items-center md:flex md:justify-center mt-8'>
- <div className='border aspect-square w-11/12 md:w-1/3 relative pl-2 pr-1'>
-     <Image
-         layout='fill'
+):(<div className='w-full flex flex-col justify-center items-center md:flex md:justify-center mt-8'>
+ <div className='aspect-square w-11/12 md:w-1/3 relative pl-2 pr-1'>
+
+ <Cropper
+          image={URL.createObjectURL(file)}
+          crop={crop}
+          rotation={rotation}
+          zoom={zoom}
+          aspect={1/1}
+          onCropChange={setCrop}
+          onRotationChange={setRotation}
+          onCropComplete={onCropComplete}
+          onZoomChange={setZoom}
+          /> 
+     {/* <Image
+       fill
            objectFit='cover'
          src={
            URL.createObjectURL(file)
-         } alt="" />
+         } alt="" /> */}
  </div>
  <div className='flex flex-row justify-center space-x-2 p-2 '>
          <button onClick={clearFile} className="mb-2 px-3 py-2 font-bold text-center inline-flex items-center text-white bg-black rounded-lg hover:bg-[#686868] focus:ring-4">
@@ -253,7 +294,7 @@ file.type == 'video/mp4' ? (<div className='flex flex-col justify-center items-c
                     }
                    <input type='file' name='product_file' accept='image/*' onChange={handleFile} onClick={(e:any)=>{
                     e.target.value = null
-                   }} ref={fileInput} style={{display: 'none'}}/>
+                   }} ref={fileInput} style={{display: 'none'}}/>                                                                                                                                                                 
 </div>
 
         <Formik initialValues={initialValues}
@@ -335,6 +376,9 @@ file.type == 'video/mp4' ? (<div className='flex flex-col justify-center items-c
       
        </div> */}
 
+
         </div>
+    
+  
     )
 }
