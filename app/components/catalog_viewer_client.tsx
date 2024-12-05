@@ -1,11 +1,12 @@
 'use client'
 import Link from 'next/link';
-import { useState,MouseEvent, useEffect } from "react";
+import { useState,MouseEvent, useEffect, } from "react";
 import Image from 'next/image'
 import Modal from './modal';
 import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import type { Metadata } from 'next'
+import { HiLightBulb } from "react-icons/hi";
 
 
 interface productProps {
@@ -37,6 +38,7 @@ export default function CatalogViewerClient(props:any){
     const [isLoading,setIsLoading] = useState(true);
     const [isOpen,setIsOpen] = useState(false)
     const [showContactModal,setShowContactModal] = useState(false)
+    const [showAdModal,setShowAdModal] = useState(false)
     
 
 
@@ -96,6 +98,80 @@ export default function CatalogViewerClient(props:any){
      
       )
       }
+
+
+      const AdModal=()=>{
+
+        return( 
+      <div className='space-y-1 w-full fixed bottom-8 '>
+<div className="left-1/2 -translate-x-1/2 md:w-2/5 w-11/12 bottom-0 text-xs absolute bg-white rounded-lg shadow p-2 border-1 border-black">
+      <div className='flex justify-center items-center gap-4'>
+<HiLightBulb size={60} color='#ffb31f'/>
+      <h3 className="text-black font-bold text-2xl">Like what you see?</h3>
+      </div>
+      <p className='text-center p-2 text-base'>Create a catalog like this for your business or for personal use</p>
+      <div className='flex flex-row justify-center items-center gap-2'>
+
+      <button className='px-3 py-2 w-1/3 md:w-1/4 rounded-lg w-full focus:ring-4 text-white font-bold text-center bg-[#686868]' onClick={()=>setShowAdModal(false)}>
+     No thanks
+        </button>
+
+
+ <Link href="/" className='px-3 py-2 w-1/3  md:w-1/4 rounded-lg w-full focus:ring-4 text-white font-bold text-center bg-[#ffb31f]'>
+
+ Yes
+ </Link>
+      
+
+   
+      </div>
+      <button>
+
+      </button>
+  </div>
+
+
+       
+
+      
+      {/* <div className="fixed inset-0 z-10 w-screen overflow-y-auto bottom-0 absolute inset-x-0 bottom-0">
+        <div className="flex min-h-full items-center justify-center bottom-0 p-4 text-center">
+    
+        <div className="md:w-2/4 w-full relative bg-white rounded-lg shadow p-6">
+      <button type="button" className="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="popup-modal" >
+          <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+          </svg>
+      </button>
+      <h3 className="text-lg font-normal text-gray-500 dark:text-gray-400">Contact Us</h3>
+      <div className="p-4 md:p-5 text-center">
+        <p>Phone</p>
+        <p className='text-xl font-bold break-words'></p>
+    <div className='w-full justify-center'>  
+    <p>Email</p>
+        <p className='text-xl font-bold break-words'></p>
+    </div>
+       
+      
+      </div>
+  </div>
+        </div>
+      </div> */}
+      
+      </div>
+        )
+
+      }
+
+      useEffect(()=>{
+
+        setTimeout(() => {
+            setShowAdModal(true)
+          }, 10000);
+
+      },[])
+
+    
 
 
       
@@ -269,8 +345,18 @@ twobytwo ? (
 ):(<></>)}
 
 {
+    showAdModal ? (<>
+
+<AdModal/>
+
+    </>):(<></>)
+}
+
+
+{
   showContactModal ? (<ContactDialogBox/>):(<></>)
- }
+}
+
 <div className='mt-5'>
   <p className='flex justify-center p-2'>Whinst</p>
 </div>
