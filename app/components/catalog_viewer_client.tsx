@@ -39,6 +39,7 @@ export default function CatalogViewerClient(props:any){
     const [isOpen,setIsOpen] = useState(false)
     const [showContactModal,setShowContactModal] = useState(false)
     const [showAdModal,setShowAdModal] = useState(false)
+    const [isOwner,setIsOwner] = useState(false)
     
 
 
@@ -165,6 +166,13 @@ export default function CatalogViewerClient(props:any){
 
       useEffect(()=>{
 
+        if(props.props2){
+          if(props.props2.user.id == props.props1.catalog.user_id){
+            setIsOwner(true)
+          }
+        }
+
+        console.log(props)
         setTimeout(() => {
             setShowAdModal(true)
           }, 10000);
@@ -347,7 +355,13 @@ twobytwo ? (
 {
     showAdModal ? (<>
 
+    {
+      !isOwner ? (<>
 <AdModal/>
+      </>):(<></>)
+    }
+
+
 
     </>):(<></>)
 }

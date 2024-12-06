@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import CatalogViewerClient from '@/app/components/catalog_viewer_client';
 import type { Metadata } from 'next'
 
+
 type Props = {
   params: {
     catalog_id:string
@@ -74,7 +75,7 @@ export default async function CatalogViewer({ params }: { params: { catalog_id: 
 
     return(
       <>
-          <CatalogViewerClient props={products} props1={data}/>
+          <CatalogViewerClient props={products} props1={data} props2={session}/>
       </>
 
 
