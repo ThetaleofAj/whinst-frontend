@@ -201,6 +201,7 @@ const CancelSubBox=()=>{
       {/* </button> */}
       
     </div>
+    <h3 className="text-sm text-gray-500 p-2">Pay once. Access forever.</h3>
   </div>
 
 
@@ -236,6 +237,7 @@ const CancelSubBox=()=>{
       {/* </button> */}
       
     </div>
+    <h3 className="text-sm text-gray-500 p-2">Pay once. Access forever.</h3>
   </div>
 
 
@@ -243,7 +245,8 @@ const CancelSubBox=()=>{
         </div>
     
     
-
+        <h3 className="text text-gray-500 p-2">If you have any questions or concerns about making a payment, feel free to email us at <span className='underline font-semibold'>whinst.zm@gmail.com</span>.</h3>
+        <h3 className="text text-gray-500 p-2">We appreciate your feedback!</h3>
 
        
     </div>
